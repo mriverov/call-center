@@ -46,4 +46,4 @@ el semaforo no tiene permisos para asignar, el proceso intenta hacer un acquire 
 
 ## UML
 
-![alt text] (https://github.com/mriverov/call-center/blob/master/uml/call_center_uml.jpg)
+![alt text] (https://github.com/mriverov/call-center/raw/master/uml/call_center_uml.jpg)
