@@ -90,7 +90,7 @@ public class CallCenterTest {
             client.start();
         }
 
-        // calls were not asigned to directors or supervisors
+        // calls were not assigned to directors or supervisors
         Assert.assertEquals(callCenter.getDirectors().size(), 1);
         Assert.assertEquals(callCenter.getSupervisors().size(), 1);
     }

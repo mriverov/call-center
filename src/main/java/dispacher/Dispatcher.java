@@ -43,11 +43,13 @@ public class Dispatcher extends Thread {
         try {
 
             while (true) {
-                //any call is waiting?
+
+                // Block calls assignation
                 mutex.acquire();
 
+                //Any call is waiting?
                 if(calls.size()>0){
-                    // Take a resource (employee) in order to take asign a call
+                    // Take a resource (employee) in order to take assign a call
                     callCenterResources.acquire();
 
                     // Dispatch call to an available employee with the following order:
@@ -58,23 +60,23 @@ public class Dispatcher extends Thread {
                         System.out.println("Taking call from client  " + clientId);
                         if (!operators.isEmpty()) {
                             Operator operator = operators.remove(0);
-                            System.out.println("Asign call from: " + clientId + " to: "+operator.name);
+                            System.out.println("Assign call from: " + clientId + " to: "+operator.name);
 
                             operator.start();
                         } else if (!supervisors.isEmpty()) {
                             Supervisor supervisor = supervisors.remove(0);
-                            System.out.println("Asign call from: " + clientId + " to: "+supervisor.name);
+                            System.out.println("Assign call from: " + clientId + " to: "+supervisor.name);
                             supervisor.start();
                         } else if(!directors.isEmpty()){
                             Director director = directors.remove(0);
-                            System.out.println("Asign call from: " + clientId + " to: "+director.name);
+                            System.out.println("Assign call from: " + clientId + " to: "+director.name);
 
                             director.start();
                         }
 
                     }else {
 
-                        //any employee was asigned so the resource was released
+                        //Any employee was assigned so the resource was released
                         callCenterResources.release();
                     }
                 }
