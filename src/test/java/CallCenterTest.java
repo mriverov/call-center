@@ -1,7 +1,7 @@
 
-import dispacher.CallCenter;
-import dispacher.Client;
-import dispacher.Dispatcher;
+import dispatcher.CallCenter;
+import dispatcher.Client;
+import dispatcher.Dispatcher;
 import model.impl.Director;
 import model.impl.Operator;
 import model.impl.Supervisor;

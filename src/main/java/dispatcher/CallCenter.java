@@ -1,4 +1,4 @@
-package dispacher;
+package dispatcher;
 
 import model.impl.Director;
 import model.impl.Operator;
