@@ -6,4 +6,5 @@ target
 .classpath
 .idea
 *.iml
+.idea/*
 
